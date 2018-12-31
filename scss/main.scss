@@ -74,10 +74,11 @@ main {
   }
 }
 
+// About page
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-areas: "bioimage bio bio" "feild feild feild" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
 
   .bio-image {
@@ -142,9 +143,100 @@ main {
       }
     }
   }
+
+  // Education & experiences feild
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+  .feild {
+    width: 100%;
+    grid-area: feild;
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    section {
+      display: none;
+      padding: 20px 0 0;
+      border-top: 1px solid #abc;
+
+      p:not(:last-child) {
+        margin: 0 0 20px;
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      margin: 0 0 -1px;
+      padding: 15px 25px;
+      font-weight: 600;
+      text-align: center;
+      color: #abc;
+      border: 1px solid transparent;
+    }
+
+    label:before {
+      font-family: fontawesome;
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    label[for*="1"]:before {
+      content: "\f0b1";
+    }
+    label[for*="2"]:before {
+      content: "\f2a3";
+    }
+    label[for*="3"]:before {
+      content: "\f243";
+    }
+    label[for*="4"]:before {
+      content: "\f19d";
+    }
+
+    label:hover {
+      color: #789;
+      cursor: pointer;
+    }
+
+    input:checked + label {
+      color: #0af;
+      border: 1px solid #abc;
+      border-top: 2px solid #0af;
+      border-bottom: 1px solid #fff;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4 {
+      display: block;
+    }
+
+    ul {
+      li {
+        span {
+          font-size: 1.5rem;
+          color: $secondary-color;
+        }
+      }
+    }
+
+    @media screen and (max-width: 816px) {
+      label {
+        font-size: 0;
+      }
+      label:before {
+        margin: 0;
+        font-size: 18px;
+      }
+    }
+  }
 }
 
-// Work/Projects
+// Work page
 .projects {
   display: grid;
   grid-gap: 0.7rem;
