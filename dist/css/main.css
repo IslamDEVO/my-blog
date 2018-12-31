@@ -251,9 +251,9 @@ main {
       color: #789;
       cursor: pointer; }
     .about-info .feild input:checked + label {
-      color: #0af;
+      color: #80d26d;
       border: 1px solid #abc;
-      border-top: 2px solid #0af;
+      border-top: 2px solid #80d26d;
       border-bottom: 1px solid #fff; }
     .about-info .feild #tab1:checked ~ #content1,
     .about-info .feild #tab2:checked ~ #content2,
